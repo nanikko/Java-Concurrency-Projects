@@ -1,4 +1,4 @@
-Banking
+Concurrent Banking Model
 =======
 
 The basic goal of the project is to build a banking application which allows a user to create an account and perform
