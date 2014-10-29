@@ -4,22 +4,23 @@
 
 ####Logical flow of function 'parallelMergeSort'  
 
-1.Takes maximum number of processors available for the system (arg = NPROCS) as argument. 
-2.NPROCS number of threads are created. Each thread sorts [size of input array/NPROCS] number of elements concurrently by calling the sequential merge sort function. 
-3.Threads are joined and the results are merged to get a sorted array.
+1. Takes maximum number of processors available for the system (arg = NPROCS) as argument. 
+1. NPROCS number of threads are created. Each thread sorts [size of input array/NPROCS] number of elements concurrently by calling the sequential merge sort function. 
+1. Threads are joined and the results are merged to get a sorted array.
 
 ###MPRecursiveMergeSortTest.java 
 
 ####Logical flow of function 'parallelMergeSort'-
 
-1.Takes maximum number of processors available as argument. 
-2.Recursive call to parallelMergeSort: 
-  1.Initially, NPROCS/2 number of threads are created. 
-  2.Each thread calls parallelMergeSort recursively. 
-  3.The array passed is halved for each recursive call, left half passed to one thread, right half to another thread. 
-  4.The number of threads to be created in each recursive call is halved. 
-  5.When the number of threads = 1, sequential merge sort is called. 
-  6.Threads are joined and the results are merged to get a sorted array
+1. Takes maximum number of processors available as argument. 
+2. Recursive call to parallelMergeSort:
+
+  1. Initially, NPROCS/2 number of threads are created. 
+  2. Each thread calls parallelMergeSort recursively. 
+  3. The array passed is halved for each recursive call, left half passed to one thread, right half to another thread. 
+  4. The number of threads to be created in each recursive call is halved. 
+  5. When the number of threads = 1, sequential merge sort is called. 
+  6. Threads are joined and the results are merged to get a sorted array
 
 ###Exploiting More Parallelism :
 
