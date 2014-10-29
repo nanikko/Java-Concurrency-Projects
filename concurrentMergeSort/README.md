@@ -1,16 +1,16 @@
-##Implementation Description of parallel merge sort:
+###Implementation Description of parallel merge sort:
 
-###MergeSortTest.java : 
+####MergeSortTest.java : 
 
-####Logical flow of function 'parallelMergeSort'  
+#####Logical flow of function 'parallelMergeSort'  
 
 1. Takes maximum number of processors available for the system (arg = NPROCS) as argument. 
 1. NPROCS number of threads are created. Each thread sorts [size of input array/NPROCS] number of elements concurrently by calling the sequential merge sort function. 
 1. Threads are joined and the results are merged to get a sorted array.
 
-###MPRecursiveMergeSortTest.java 
+####MPRecursiveMergeSortTest.java 
 
-####Logical flow of function 'parallelMergeSort'-
+#####Logical flow of function 'parallelMergeSort'-
 
 1. Takes maximum number of processors available as argument. 
 2. Recursive call to parallelMergeSort:
@@ -22,7 +22,7 @@
   5. When the number of threads = 1, sequential merge sort is called. 
   6. Threads are joined and the results are merged to get a sorted array
 
-###Exploiting More Parallelism :
+####Exploiting More Parallelism :
 
 Generate Random numbers in separate threads File - MergeSortTest.java and MPRecursiveMergeSortTest.java NPROCS number of threads are generated. The same input array is passed to return containing random values. NPROCS thread fill in the array (data) within different start and end locations (This avoids implementing shared variables) such that the entire array is filled at the end. Threads are joined. In this implementation, java.util.random is used instead of COP5618Random. For large number of elements, parallel generation of random numbers instead of sequential for loop makes the program faster.
 
